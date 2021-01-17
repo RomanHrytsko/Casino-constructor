@@ -138,6 +138,10 @@ class SuperAdmin extends User {
     }
 
     createNewGameMachine(moneyForGameMachine, casinoId) {
+        if(moneyForGameMachine > this.money){
+            console.error('You do not have enough money for creating new game machine')
+            return
+        }
         let gameMachine = new GameMachine(moneyForGameMachine)
 
         this.money -= moneyForGameMachine
@@ -229,7 +233,7 @@ class SuperAdmin extends User {
 const superAdmin1 = new SuperAdmin('Igor', 100000)
 let myCasino = superAdmin1.createNewCasino('CasinoLotto')
 
-let gameMachine = superAdmin1.createNewGameMachine(1000, 0)
+// let gameMachine = superAdmin1.createNewGameMachine(1000, 0)
 // let gameMachine2 = superAdmin1.createNewGameMachine(1001, 0)
 // let gameMachine3 = superAdmin1.createNewGameMachine(1002, 0)
 // let gameMachine5 = superAdmin1.createNewGameMachine(1004, 0)
