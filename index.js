@@ -270,7 +270,7 @@ class SuperAdmin extends User {
 
 }
 
-const superAdmin1 = new SuperAdmin('Pavel', 100000)
+const superAdmin1 = new SuperAdmin('Pavel', 100000);
 // let myCasino = superAdmin1.createNewCasino('CasinoLotto')
 // let gameMachine0 = superAdmin1.createNewGameMachine(1000, 0)
 
